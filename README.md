@@ -58,6 +58,11 @@ without any constraints you call
 
 ```
 (x, fx, status) = quadprog([3 1; 1 4], [5, 6])
+```
+
+The answer you should get is:
+
+```
 ([-1.27273,-1.18182],-6.7272727272727275,1)
 ```
 
