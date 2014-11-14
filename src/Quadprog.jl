@@ -26,9 +26,10 @@ function quadprog(Q, c;
     #      lb <= x <= ub
     # init x with x0
 
-    n   = length(x0)      # number of variables
-    m   = size(A,   1)    # number of inequality constraints
-    meq = size(Aeq, 1)    # number of equality constraints
+    if ~issym(Q)           error("Q must be symmetric") end
+    n   = length(x0)       # number of variables
+    m   = size(A,   1)     # number of inequality constraints
+    meq = size(Aeq, 1)     # number of equality constraints
     if length(b)   != m    error("size missmatch") end
     if length(beq) != meq  error("size missmatch") end
     if size(A, 2) != size(Aeq, 2) != length(ub) != length(lb) != length(x0) != n
@@ -65,8 +66,6 @@ function quadprog(Q, c;
     prob.x = x0
     status = solveProblem(prob)
     return (prob.x, prob.obj_val, status)
-end
-
 end
 
 end # module
