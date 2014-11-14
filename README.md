@@ -77,7 +77,7 @@ To solve the dual of a linear support vector machine (SVM), i.e.
 
 ```
 max    sum(alpha) - 0.5 * alpha' * diagm(y) * X * X' * diagm(y) * alpha
-s.t.   0 <= alpha <= C\\
+s.t.   0 <= alpha <= C
        y' * alpha == 0
 ```
 
@@ -92,5 +92,3 @@ K  = yX * yX'
                               Aeq=y', beq=zeros(1),
                               x0=zeros(n))
 ```
-
-with `x0` being the initial value.
