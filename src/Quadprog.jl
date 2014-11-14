@@ -68,4 +68,4 @@ function quadprog(Q, c;
     return (prob.x, prob.obj_val, status)
 end
 
-end # module
+end # of module
